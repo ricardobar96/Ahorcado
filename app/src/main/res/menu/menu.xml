@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="iespuertodelacruz.ricardo.ahorcado.activity.MainActivity">
+    <item
+        android:id="@+id/menuFacil"
+        android:orderInCategory="1"
+        android:title="Fácil"
+        app:showAsAction="" />
+
+    <item
+        android:id="@+id/menuNormal"
+        android:orderInCategory="2"
+        android:title="Normal"
+        app:showAsAction="" />
+
+    <item
+        android:id="@+id/menuDificil"
+        android:orderInCategory="3"
+        android:title="Difícil"
+        app:showAsAction="" />
+
+    <item
+        android:id="@+id/menuSorpresa"
+        android:orderInCategory="4"
+        android:title="Sorpréndeme"
+        app:showAsAction="" />
+</menu>
