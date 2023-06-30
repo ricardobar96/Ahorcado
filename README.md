@@ -6,6 +6,7 @@ El usuario debe tratar de adivinar una palabra de dificultad variable en un limi
 
 El número de palabras acertadas se refleja en la puntuación del usuario, que aumenta conforme este gana partidas.
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Hangman game created with Java.  
 
