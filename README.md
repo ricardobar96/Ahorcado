@@ -1,6 +1,7 @@
 # Ahorcado
 
-Juego del Ahorcado creado con Java. 
+Juego del Ahorcado creado con Java.  
+
 El usuario debe tratar de adivinar una palabra de dificultad variable en un limitado número de intentos, representados mediante el dibujo de un monigote siendo ahorcado.
 El número de palabras acertadas se refleja en la puntuación del usuario, que aumenta conforme este gana partidas.
 
