@@ -1,4 +1,4 @@
-package iespuertodelacruz.ricardo.ahorcado
+package net.atos.hangman
 
 import org.junit.Assert
 import org.junit.Test

@@ -1,4 +1,4 @@
-package iespuertodelacruz.ricardo.ahorcado.activity
+package net.atos.hangman
 
 import android.os.Bundle
 import android.view.Menu
@@ -9,7 +9,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import iespuertodelacruz.ricardo.ahorcado.R
 import java.util.Random
 
 class MainActivity : AppCompatActivity() {
