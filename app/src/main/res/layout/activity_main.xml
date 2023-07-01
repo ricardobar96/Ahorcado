@@ -36,7 +36,7 @@
         android:layout_centerHorizontal="true"
         android:textStyle="bold"
         android:textSize="15sp"
-        android:text="Puntuación: "/>
+        android:text="Score: "/>
 
     <TextView
 
@@ -276,7 +276,7 @@
             android:layout_marginRight="2dp"
             android:onClick="comenzar"
             app:backgroundTint="#FFC107"
-            android:text="Nueva Partida" />
+            android:text="New Game" />
 
     </LinearLayout>
     </LinearLayout>

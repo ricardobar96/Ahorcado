@@ -6,7 +6,7 @@
     <item
         android:id="@+id/menuFacil"
         android:orderInCategory="1"
-        android:title="Fácil"
+        android:title="Easy"
         app:showAsAction="" />
 
     <item
@@ -18,12 +18,12 @@
     <item
         android:id="@+id/menuDificil"
         android:orderInCategory="3"
-        android:title="Difícil"
+        android:title="Hard"
         app:showAsAction="" />
 
     <item
         android:id="@+id/menuSorpresa"
         android:orderInCategory="4"
-        android:title="Sorpréndeme"
+        android:title="Random"
         app:showAsAction="" />
 </menu>

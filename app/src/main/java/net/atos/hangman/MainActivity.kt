@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menuFacil -> {
-                dificultad = "Facil"
+                dificultad = "Easy"
                 nuevaPartida()
             }
 
@@ -57,12 +57,12 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.menuDificil -> {
-                dificultad = "Dificil"
+                dificultad = "Hard"
                 nuevaPartida()
             }
 
             R.id.menuSorpresa -> {
-                val dificultades = arrayOf("Facil", "Normal", "Dificil")
+                val dificultades = arrayOf("Easy", "Normal", "Hard")
                 dificultad = dificultades[random.nextInt(dificultades.size)]
                 nuevaPartida()
             }
@@ -75,10 +75,10 @@ class MainActivity : AppCompatActivity() {
      * @return String que representa la palabra que tendrá que adivinar el jugador
      */
     private fun elegirPalabra(): String {
-        if (dificultad == "Facil") {
+        if (dificultad == "Easy") {
             return palabrasFacil[random.nextInt(palabrasFacil.size)]
         }
-        return if (dificultad == "Dificil") {
+        return if (dificultad == "Hard") {
             palabrasDificil[random.nextInt(palabrasDificil.size)]
         } else palabrasMedio[random.nextInt(palabrasMedio.size)]
     }
@@ -132,7 +132,7 @@ class MainActivity : AppCompatActivity() {
             }
             letras.add(c)
         } else {
-            Toast.makeText(this, "Letra ya introducida", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Letter already entered", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -161,33 +161,33 @@ class MainActivity : AppCompatActivity() {
      * @param v
      */
     fun tocarLetra(v: View) {
-        if (errores < 6 && buscarTV!!.text != "¡HAS GANADO!") {
+        if (errores < 6 && buscarTV!!.text != "YOU WIN!") {
             val letra = (v as Button).text.toString()
             leerLetra(letra)
             palabraTV!!.text = estadoPalabra()
             actualizarImagen(errores)
             if (palabraBuscar.contentEquals(String(respuestas))) {
-                Toast.makeText(this, "¡HAS GANADO!", Toast.LENGTH_SHORT).show()
-                buscarTV!!.text = "¡HAS GANADO!"
-                if (dificultad == "Dificil") {
+                Toast.makeText(this, "YOU WIN!", Toast.LENGTH_SHORT).show()
+                buscarTV!!.text = "YOU WIN!"
+                if (dificultad == "Hard") {
                     puntuacion += 15
                 }
                 if (dificultad == "Normal") {
                     puntuacion += 10
                 }
-                if (dificultad == "Facil") {
+                if (dificultad == "Easy") {
                     puntuacion += 5
                 }
-                puntuacionTV!!.text = "Puntuación: $puntuacion"
+                puntuacionTV!!.text = "Score: $puntuacion"
             } else {
                 if (errores >= 6) {
                     actualizarImagen(7)
-                    Toast.makeText(this, "Has perdido...", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "You lose...", Toast.LENGTH_SHORT).show()
                     buscarTV!!.text = palabraBuscar
                 }
             }
         } else {
-            Toast.makeText(this, "Fin del juego", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "End of the game", Toast.LENGTH_SHORT).show()
         }
     }
 
