@@ -155,7 +155,7 @@
                 android:onClick="touchLetter"
                 />
             <Button
-                android:layout_width="40dp"
+                android:layout_width="41dp"
                 android:layout_height="wrap_content"
                 android:text="M"
                 android:layout_marginRight="2dp"
@@ -234,7 +234,7 @@
                 android:onClick="touchLetter"
                 />
             <Button
-                android:layout_width="40dp"
+                android:layout_width="43dp"
                 android:layout_height="wrap_content"
                 android:text="W"
                 android:layout_marginRight="2dp"
