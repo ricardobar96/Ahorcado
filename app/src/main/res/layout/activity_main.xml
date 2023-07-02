@@ -271,13 +271,12 @@
         android:layout_marginTop="5dp">
 
         <Button
-            android:layout_width="292dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="2dp"
             android:onClick="start"
-            app:backgroundTint="#FFC107"
+            app:backgroundTint="#F44336"
             android:text="New Game" />
-
     </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
