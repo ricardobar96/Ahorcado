@@ -12,24 +12,24 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.Random
 
 class MainActivity : AppCompatActivity() {
-    var palabraBuscar: String? = null
-    lateinit var respuestas: CharArray
-    var errores = 0
-    var dificultad = "Normal"
-    var puntuacion = 0
-    private val letras = ArrayList<String>()
-    private var imagen: ImageView? = null
-    private var palabraTV: TextView? = null
-    private var buscarTV: TextView? = null
-    private var puntuacionTV: TextView? = null
+    var wordSearch: String? = null
+    lateinit var answers: CharArray
+    var errors = 0
+    var difficulty = "Normal"
+    var score = 0
+    private val letters = ArrayList<String>()
+    private var image: ImageView? = null
+    private var wordTV: TextView? = null
+    private var searchTV: TextView? = null
+    private var scoreTV: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        imagen = findViewById(R.id.img)
-        palabraTV = findViewById(R.id.palabraTV)
-        buscarTV = findViewById(R.id.buscarTV)
-        puntuacionTV = findViewById(R.id.puntuacionTV)
-        nuevaPartida()
+        image = findViewById(R.id.img)
+        wordTV = findViewById(R.id.wordTV)
+        searchTV = findViewById(R.id.searchTV)
+        scoreTV = findViewById(R.id.scoreTV)
+        newGame()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -46,25 +46,25 @@ class MainActivity : AppCompatActivity() {
      */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menuFacil -> {
-                dificultad = "Easy"
-                nuevaPartida()
+            R.id.menuEasy -> {
+                difficulty = "Easy"
+                newGame()
             }
 
             R.id.menuNormal -> {
-                dificultad = "Normal"
-                nuevaPartida()
+                difficulty = "Normal"
+                newGame()
             }
 
-            R.id.menuDificil -> {
-                dificultad = "Hard"
-                nuevaPartida()
+            R.id.menuHard -> {
+                difficulty = "Hard"
+                newGame()
             }
 
-            R.id.menuSorpresa -> {
-                val dificultades = arrayOf("Easy", "Normal", "Hard")
-                dificultad = dificultades[random.nextInt(dificultades.size)]
-                nuevaPartida()
+            R.id.menuRandom -> {
+                val difficulties = arrayOf("Easy", "Normal", "Hard")
+                difficulty = difficulties[random.nextInt(difficulties.size)]
+                newGame()
             }
         }
         return super.onOptionsItemSelected(item)
@@ -74,23 +74,23 @@ class MainActivity : AppCompatActivity() {
      * Método que en base al valor de "dificultad" selecciona la palabra de un array determinado
      * @return String que representa la palabra que tendrá que adivinar el jugador
      */
-    private fun elegirPalabra(): String {
-        if (dificultad == "Easy") {
-            return palabrasFacil[random.nextInt(palabrasFacil.size)]
+    private fun chooseWord(): String {
+        if (difficulty == "Easy") {
+            return easyWords[random.nextInt(easyWords.size)]
         }
-        return if (dificultad == "Hard") {
-            palabrasDificil[random.nextInt(palabrasDificil.size)]
-        } else palabrasMedio[random.nextInt(palabrasMedio.size)]
+        return if (difficulty == "Hard") {
+            hardWords[random.nextInt(hardWords.size)]
+        } else normalWords[random.nextInt(normalWords.size)]
     }
 
     /**
      * Método que actualiza la imagen del ahorcado según los errores cometidos por el jugador
      * @param estado Integer que representa el número de errores cometidos en la partida actual
      */
-    private fun actualizarImagen(estado: Int) {
-        val resource = resources.getIdentifier("estado$estado", "drawable",
+    private fun updateImage(state: Int) {
+        val resource = resources.getIdentifier("state$state", "drawable",
                 packageName)
-        imagen!!.setImageResource(resource)
+        image!!.setImageResource(resource)
     }
 
     /**
@@ -99,17 +99,17 @@ class MainActivity : AppCompatActivity() {
      * estado de la imagen del ahorcado y los mensajes de la vista, además de elegir una nueva
      * palabra a buscar con el método elegirPalabra
      */
-    fun nuevaPartida() {
-        errores = -1
-        letras.clear()
-        palabraBuscar = elegirPalabra()
-        respuestas = CharArray(palabraBuscar!!.length)
-        for (i in respuestas.indices) {
-            respuestas[i] = '_'
+    fun newGame() {
+        errors = -1
+        letters.clear()
+        wordSearch = chooseWord()
+        answers = CharArray(wordSearch!!.length)
+        for (i in answers.indices) {
+            answers[i] = '_'
         }
-        actualizarImagen(errores)
-        palabraTV!!.text = estadoPalabra()
-        buscarTV!!.text = ""
+        updateImage(errors)
+        wordTV!!.text = stateWord()
+        searchTV!!.text = ""
     }
 
     /**
@@ -119,18 +119,18 @@ class MainActivity : AppCompatActivity() {
      * Por último se añade la letra a la lista de letras introducidas en la partida
      * @param c String que representa la letra seleccionada por el jugador
      */
-    private fun leerLetra(c: String) {
-        if (!letras.contains(c)) {
-            if (palabraBuscar!!.contains(c)) {
-                var index = palabraBuscar!!.indexOf(c)
+    private fun readLetter(c: String) {
+        if (!letters.contains(c)) {
+            if (wordSearch!!.contains(c)) {
+                var index = wordSearch!!.indexOf(c)
                 while (index >= 0) {
-                    respuestas[index] = c[0]
-                    index = palabraBuscar!!.indexOf(c, index + 1)
+                    answers[index] = c[0]
+                    index = wordSearch!!.indexOf(c, index + 1)
                 }
             } else {
-                errores++
+                errors++
             }
-            letras.add(c)
+            letters.add(c)
         } else {
             Toast.makeText(this, "Letter already entered", Toast.LENGTH_SHORT).show()
         }
@@ -141,11 +141,11 @@ class MainActivity : AppCompatActivity() {
      * letras adivinadas por este
      * @return String que representa el estado de la palabra a adivinar
      */
-    private fun estadoPalabra(): String {
+    private fun stateWord(): String {
         val builder = StringBuilder()
-        for (i in respuestas.indices) {
-            builder.append(respuestas[i])
-            if (i < respuestas.size - 1) {
+        for (i in answers.indices) {
+            builder.append(answers[i])
+            if (i < answers.size - 1) {
                 builder.append(" ")
             }
         }
@@ -160,30 +160,30 @@ class MainActivity : AppCompatActivity() {
      * cada victoria según la dificultad elegida
      * @param v
      */
-    fun tocarLetra(v: View) {
-        if (errores < 6 && buscarTV!!.text != "YOU WIN!") {
-            val letra = (v as Button).text.toString()
-            leerLetra(letra)
-            palabraTV!!.text = estadoPalabra()
-            actualizarImagen(errores)
-            if (palabraBuscar.contentEquals(String(respuestas))) {
+    fun touchLetter(v: View) {
+        if (errors < 6 && searchTV!!.text != "YOU WIN!") {
+            val letter = (v as Button).text.toString()
+            readLetter(letter)
+            wordTV!!.text = stateWord()
+            updateImage(errors)
+            if (wordSearch.contentEquals(String(answers))) {
                 Toast.makeText(this, "YOU WIN!", Toast.LENGTH_SHORT).show()
-                buscarTV!!.text = "YOU WIN!"
-                if (dificultad == "Hard") {
-                    puntuacion += 15
+                searchTV!!.text = "YOU WIN!"
+                if (difficulty == "Hard") {
+                    score += 15
                 }
-                if (dificultad == "Normal") {
-                    puntuacion += 10
+                if (difficulty == "Normal") {
+                    score += 10
                 }
-                if (dificultad == "Easy") {
-                    puntuacion += 5
+                if (difficulty == "Easy") {
+                    score += 5
                 }
-                puntuacionTV!!.text = "Score: $puntuacion"
+                scoreTV!!.text = "Score: $score"
             } else {
-                if (errores >= 6) {
-                    actualizarImagen(7)
+                if (errors >= 6) {
+                    updateImage(7)
                     Toast.makeText(this, "You lose...", Toast.LENGTH_SHORT).show()
-                    buscarTV!!.text = palabraBuscar
+                    searchTV!!.text = wordSearch
                 }
             }
         } else {
@@ -196,15 +196,15 @@ class MainActivity : AppCompatActivity() {
      * correspondiente
      * @param view
      */
-    fun comenzar(view: View?) {
-        nuevaPartida()
+    fun start(view: View?) {
+        newGame()
     }
 
     companion object {
         /**
          * Lista de palabras usadas en la dificultad Fácil
          */
-        val palabrasFacil = arrayOf(
+        val easyWords = arrayOf(
                 "PERA", "MOTO", "PALO", "LOCO", "RIMA", "REMO", "CARDO", "CAMA", "PESO",
                 "AMOR", "ROTO", "FALSO", "BURRO", "FLOR", "NOTA", "COCHE", "LIBRO", "PRESO",
                 "CANOA", "FIDEO", "CARNE", "RATON", "MANTEL", "SOBRE", "PERRO", "GATO", "LUNA",
@@ -215,7 +215,7 @@ class MainActivity : AppCompatActivity() {
         /**
          * Lista de palabras usadas en la dificultad Normal
          */
-        val palabrasMedio = arrayOf(
+        val normalWords = arrayOf(
                 "BRUJULA", "TRICICLO", "LOTERIA", "MAIZAL", "PROFESOR", "PIZARRA", "SABADO",
                 "GENESIS", "POESIA", "DIBUJO", "LIBRERIA", "PESCADO", "PANDILLA", "COMICO",
                 "ESTADO", "MONEDA", "BILLETE", "INCENDIO", "EMPRESA", "TRABAJO", "MENDRUGO",
@@ -226,7 +226,7 @@ class MainActivity : AppCompatActivity() {
         /**
          * Lista de palabras usadas en la dificultad Difícil
          */
-        val palabrasDificil = arrayOf(
+        val hardWords = arrayOf(
                 "AUTOESTIMA", "EXISTENTIAL", "OPTATIVA", "POSIBILIDAD", "ENCERRONA", "IMAGINACION",
                 "AISLAMIENTO", "CAVERNICOLA", "ORIENTACION", "PARABRISAS", "DIMENSION", "ALMOHADILLA",
                 "ESPIONAJE", "PROGRAMACION", "APOCALIPSIS", "PREMONICION", "PERIODICO", "PRESENTADOR",

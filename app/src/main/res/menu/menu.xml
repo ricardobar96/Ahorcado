@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="net.atos.hangman.MainActivity">
     <item
-        android:id="@+id/menuFacil"
+        android:id="@+id/menuEasy"
         android:orderInCategory="1"
         android:title="Easy"
         app:showAsAction="" />
@@ -16,13 +16,13 @@
         app:showAsAction="" />
 
     <item
-        android:id="@+id/menuDificil"
+        android:id="@+id/menuHard"
         android:orderInCategory="3"
         android:title="Hard"
         app:showAsAction="" />
 
     <item
-        android:id="@+id/menuSorpresa"
+        android:id="@+id/menuRandom"
         android:orderInCategory="4"
         android:title="Random"
         app:showAsAction="" />
