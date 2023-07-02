@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Método que según la opción elegida en el menú cambia la dificultad e inicia una nueva
-     * partida en dicha dificultad
+     * Method that changes the difficulty and starts a new game based on the difficulty
+     * option selected
      * @param item
      * @return
      */
@@ -71,8 +71,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Método que en base al valor de "dificultad" selecciona la palabra de un array determinado
-     * @return String que representa la palabra que tendrá que adivinar el jugador
+     * Method that selects a random word from an array based on the value "difficulty", which the
+     * player will have to guess to win the game
+     * @return String that represents the word the player have to guess to win the game
      */
     private fun chooseWord(): String {
         if (difficulty == "Easy") {
@@ -84,8 +85,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Método que actualiza la imagen del ahorcado según los errores cometidos por el jugador
-     * @param estado Integer que representa el número de errores cometidos en la partida actual
+     * Method that updates the image of a hanged figure based on the number of errors commited
+     * by the player in the current game
+     * @param estado Integer that represents the number of errors commited by the player before
+     * guessing the current word
      */
     private fun updateImage(state: Int) {
         val resource = resources.getIdentifier("state$state", "drawable",
@@ -94,10 +97,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Método que inicia una partida nueva, reseteando el número de errores cometidos en la partida
-     * anterior, la lista de letras elegidas por el jugador al intentar adivinar la palabra, el
-     * estado de la imagen del ahorcado y los mensajes de la vista, además de elegir una nueva
-     * palabra a buscar con el método elegirPalabra
+     * Method that starts a new game, resetting the number of mistakes made in the game, the list of
+     * words chosen by the player when trying to guess the word, the state of the hangman image, the
+     * messages displayed on the view. It also chooses a new word to find with the method chooseWord
      */
     fun newGame() {
         errors = -1
@@ -113,11 +115,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Método que lee la letra seleccionada por el jugador. Si la palabra a buscar no contiene esta
-     * letra, suma un error, pero si la palabra a buscar contiene esta letra se detecta en qué
-     * posición de la palabra se encuentra y se rellenan dichas posiciones en la pista mostrada.
-     * Por último se añade la letra a la lista de letras introducidas en la partida
-     * @param c String que representa la letra seleccionada por el jugador
+     * Method that reads the letter selected by the player. If the word to guess does not contain this
+     * letter, it adds an error, but if the word to search contains this letter it detects in which
+     * position goes, filling those positions and showing them to the player as a clue to help them
+     * guess the entire word. Finallu, it ads the letter to the list of letters already entered in
+     * the current game
+     * @param c String that represents the letter selected by the player
      */
     private fun readLetter(c: String) {
         if (!letters.contains(c)) {
@@ -137,9 +140,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Método que devuelve el estado de la palabra a encontrar por el jugador, variable según las
-     * letras adivinadas por este
-     * @return String que representa el estado de la palabra a adivinar
+     * Method that returns the state of the word the player have to guess, based on the letters
+     * already guessed by the player
+     * @return String that represents the state of the word the player have to guess
      */
     private fun stateWord(): String {
         val builder = StringBuilder()
@@ -153,11 +156,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Método que al seleccionar una letra muestra en la vista la pista de la palabra a adivinar
-     * actualizada en base a las letras acertadas por el jugador, el mensaje "¡HAS GANADO!" si se
-     * completa la pista antes de sobrepasar el máximo de errores y el mensaje "Has perdido..." si
-     * no se logra esto último antes de 7 errores. Además actualiza el valor de la puntuación con
-     * cada victoria según la dificultad elegida
+     * Method that when selecting a letter shows in the view an updated clue of the current word
+     * the player have to guess based on the letters correctly guessed by the player, the message
+     * "YOU WIN! if the clue is completed before reaching 7 mistakes and the message "You lost..."
+     * if the player reach 7 mistakes before achieving this. It also updates the current score with
+     * each victory, based on the difficulty of the word
      * @param v
      */
     fun touchLetter(v: View) {
@@ -192,8 +195,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Método que inicia una nueva partida con la dificultad seleccionada al pulsar el botón
-     * correspondiente
+     * Method that starts a new game with the difficulty selected when pressing the button
      * @param view
      */
     fun start(view: View?) {
@@ -202,7 +204,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         /**
-         * Lista de palabras usadas en la dificultad Fácil
+         * List of words used on the Easy difficulty
          */
         val easyWords = arrayOf(
                 "PERA", "MOTO", "PALO", "LOCO", "RIMA", "REMO", "CARDO", "CAMA", "PESO",
@@ -213,7 +215,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         /**
-         * Lista de palabras usadas en la dificultad Normal
+         * List of the words used on the Normal difficulty
          */
         val normalWords = arrayOf(
                 "BRUJULA", "TRICICLO", "LOTERIA", "MAIZAL", "PROFESOR", "PIZARRA", "SABADO",
@@ -224,7 +226,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         /**
-         * Lista de palabras usadas en la dificultad Difícil
+         * List of the words used on the Hard difficulty
          */
         val hardWords = arrayOf(
                 "AUTOESTIMA", "EXISTENTIAL", "OPTATIVA", "POSIBILIDAD", "ENCERRONA", "IMAGINACION",
