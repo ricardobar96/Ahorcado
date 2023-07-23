@@ -14,4 +14,11 @@ The user must try to guess a word of variable difficulty in a limited number of 
 
 The number of correct words is reflected in the user's score, which increases as the user wins games.  
 
-![ahorcado](https://github.com/ricardobar96/Ahorcado/assets/73242474/1a68879f-9202-4396-91c1-afa87d35e98e)
+
+![hangman](https://github.com/ricardobar96/Hangman-Game/assets/73242474/6754bb51-ce7d-42e3-aedf-044dd436bf8b)
+
+
+![difficulties](https://github.com/ricardobar96/Hangman-Game/assets/73242474/b984e74c-756a-47da-b5bd-5387887b5c97)
+
+
+![win](https://github.com/ricardobar96/Hangman-Game/assets/73242474/53ec59e5-3a3b-44e2-bf8c-b6b2fa6ef8c1)
