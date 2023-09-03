@@ -207,33 +207,33 @@ class MainActivity : AppCompatActivity() {
          * List of words used on the Easy difficulty
          */
         val easyWords = arrayOf(
-                "PERA", "MOTO", "PALO", "LOCO", "RIMA", "REMO", "CARDO", "CAMA", "PESO",
-                "AMOR", "ROTO", "FALSO", "BURRO", "FLOR", "NOTA", "COCHE", "LIBRO", "PRESO",
-                "CANOA", "FIDEO", "CARNE", "RATON", "MANTEL", "SOBRE", "PERRO", "GATO", "LUNA",
-                "PATO", "CABO", "ROJO", "POLEA", "MIRLO", "JAMON", "MONJA", "CRUZ", "GRIMA",
-                "MONTE", "SOL", "LORO", "MOSCA", "TELON", "CITA", "MENTA", "CARRO", "MANO"
+                "PEAR", "TREE", "SUN", "COW", "WOOD", "SEA", "MOON", "BED", "SOFA",
+                "LOVE", "FREE", "FALSE", "DOG", "ROSE", "PEN", "CAR", "BOOK", "JAIL",
+                "BOAT", "EAT", "MEAT", "DOOR", "ICE", "HEAT", "SAND", "PRAY", "EYE",
+                "ALIVE", "GOD", "RAY", "HOPE", "TOMB", "NEW", "FIRE", "ROCK", "REST",
+                "WALK", "BATH", "TALK", "FLY", "OPEN", "DATE", "MINT", "LIKE", "HAND"
         )
 
         /**
          * List of the words used on the Normal difficulty
          */
         val normalWords = arrayOf(
-                "BRUJULA", "TRICICLO", "LOTERIA", "MAIZAL", "PROFESOR", "PIZARRA", "SABADO",
-                "GENESIS", "POESIA", "DIBUJO", "LIBRERIA", "PESCADO", "PANDILLA", "COMICO",
-                "ESTADO", "MONEDA", "BILLETE", "INCENDIO", "EMPRESA", "TRABAJO", "MENDRUGO",
-                "ROCIO", "ARROZ", "LLUVIA", "ACAMPAR", "TENDERO", "CAUCE", "TERROR", "TORTUGA",
-                "NADADOR", "PERSONA", "HOSTAL", "HELADO", "CORRAL", "AMPARO", "EXTRAÑO", "FRIO"
+                "MOUNTAIN", "LANGUAGE", "PAINTING", "WHEEL", "PROFESSOR", "CHALK", "SATURDAY",
+                "GENESIS", "POETRY", "RECORD", "LIBRERY", "POTATO", "GANG", "FUNNY",
+                "STATE", "MONEY", "INVEST", "SPARK", "COMPANY", "WORKER", "SHOE",
+                "LANTERN", "SPRAY", "BEACH", "AWAKE", "KEEPER", "STRAY", "HORROR", "TURTLE",
+                "SWIMMER", "PERSON", "HOTEL", "CREAM", "REVENGE", "REGRET", "STRANGE", "PROUD"
         )
 
         /**
          * List of the words used on the Hard difficulty
          */
         val hardWords = arrayOf(
-                "AUTOESTIMA", "EXISTENTIAL", "OPTATIVA", "POSIBILIDAD", "ENCERRONA", "IMAGINACION",
-                "AISLAMIENTO", "CAVERNICOLA", "ORIENTACION", "PARABRISAS", "DIMENSION", "ALMOHADILLA",
-                "ESPIONAJE", "PROGRAMACION", "APOCALIPSIS", "PREMONICION", "PERIODICO", "PRESENTADOR",
-                "CRUCIGRAMA", "EMPERADOR", "PATRONAJE", "MOCHILERO", "MEDICINA", "SANITARIO", "AZUCENA",
-                "PIZZERIA", "TABAQUERIA", "GASOLINERA", "EMPRENDEDOR", "RESPONSABILIDAD", "DISCIPLINA"
+                "IMAGINATION", "EXISTENTIAL", "AWKWARD", "POSSIBILITY", "GLYPH", "IMAGINACION",
+                "WELLSPRING", "STRONGHOLD", "JUKEBOX", "UMBRELLA", "BOOKWORM", "BLIZZARD",
+                "JACKPOT", "PROGRAMMER", "PARANOIA", "PNEUMONIA", "NEWSPAPER", "NIGHTCLUB",
+                "EXODUS", "EMPEROR", "CORRUPTION", "BACKPACK", "MUSHROOM", "WARRIOR", "DINOSAUR",
+                "MICROWAVE", "BAREFOOT", "BEAUTIFUL", "HANDSOME", "EXPRESSION", "DISCIPLINE"
         )
         val random = Random()
     }
