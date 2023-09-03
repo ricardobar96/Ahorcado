@@ -21,13 +21,13 @@ Comming soon
 
 ## Screenshots
 
-![hangman](https://github.com/ricardobar96/Hangman-Game/assets/73242474/6754bb51-ce7d-42e3-aedf-044dd436bf8b)
+![hang0](https://github.com/ricardobar96/Hangman-Game/assets/73242474/f9e16085-e494-4476-ae7a-0a87d48d59e5)
 
 
-![difficulties](https://github.com/ricardobar96/Hangman-Game/assets/73242474/b984e74c-756a-47da-b5bd-5387887b5c97)
+![HANG1](https://github.com/ricardobar96/Hangman-Game/assets/73242474/8c03ca02-ab41-454d-bc27-080a3186556e)
 
 
-![win](https://github.com/ricardobar96/Hangman-Game/assets/73242474/53ec59e5-3a3b-44e2-bf8c-b6b2fa6ef8c1)
+![hang2](https://github.com/ricardobar96/Hangman-Game/assets/73242474/36801130-7da3-41ea-b501-2b9194c29eb7)
 
 <br>
 
