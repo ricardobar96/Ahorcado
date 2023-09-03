@@ -15,7 +15,7 @@ The number of correct words is reflected in the user's score, which increases as
 
 ## Preview
 
-Comming soon
+[<img src="https://cdn.pixabay.com/photo/2019/06/25/12/59/click-here-4298145_1280.png" width="50%">](https://www.youtube.com/watch?v=cTOPgtCQ6XA "Preview Hangman Game")
 
 <br>
 
