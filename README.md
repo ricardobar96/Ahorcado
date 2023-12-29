@@ -15,19 +15,17 @@ The number of correct words is reflected in the user's score, which increases as
 
 ## Preview
 
-[<img src="https://cdn.pixabay.com/photo/2019/06/25/12/59/click-here-4298145_1280.png" width="50%">](https://www.youtube.com/watch?v=cTOPgtCQ6XA "Preview Hangman Game")
+[<img src="images/button.png" width="50%">](https://www.youtube.com/watch?v=cTOPgtCQ6XA "Preview Hangman Game")
 
 <br>
 
 ## Screenshots
 
-![hang0](https://github.com/ricardobar96/Hangman-Game/assets/73242474/f9e16085-e494-4476-ae7a-0a87d48d59e5)
+![hang1](images/hang1.png)
 
+![hang2](images/hang2.png)
 
-![HANG1](https://github.com/ricardobar96/Hangman-Game/assets/73242474/8c03ca02-ab41-454d-bc27-080a3186556e)
-
-
-![hang2](https://github.com/ricardobar96/Hangman-Game/assets/73242474/36801130-7da3-41ea-b501-2b9194c29eb7)
+![hang3](images/hang3.png)
 
 <br>
 
